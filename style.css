@@ -628,10 +628,28 @@ html {
   margin-bottom: 0.5rem;
   min-height: 2rem;
 }
+.newsletter__form .user_info {
+  display: flex;
+  flex-direction: column;
+}
 @media screen and (min-width: 768px) {
   .newsletter__discount {
     font-size: 1.75rem;
     text-align: center;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .newsletter__form .user_info {
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+  }
+  .newsletter__form .user_info label {
+    margin-left: 3rem;
+    margin-right: 0.5rem;
+  }
+  .newsletter__form .user_info label::after {
+    content: ":";
   }
 }
 
@@ -639,9 +657,18 @@ html {
   margin: 0 auto;
   width: min-content;
 }
+.form__promotions {
+  font-size: 1rem;
+}
 @media screen and (min-width: 768px) {
   .form__button {
     font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .form__promotions {
+    max-width: 480px;
+    align-self: center;
   }
 }
 
