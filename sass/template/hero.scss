@@ -1,0 +1,69 @@
+.hero {
+	background-color: var(--c-primary);
+	border-radius: 0.5rem;
+	color: var(--c-secundary);
+
+	margin: 3.5rem auto;
+	padding-top: 1.5rem;
+	padding-bottom: 2.5rem;
+	text-align: center;
+
+	&__image {
+		display: none;
+		min-width: 600px;
+	}
+
+	@media screen and (min-width: 768px) {
+		display: flex;
+		padding: unset; //reset hero paddings
+		flex-direction: column;
+		overflow: hidden;
+		width: fit-content;
+
+		&__image {
+			display: flex;
+		}
+	}
+
+	@media screen and (min-width: 1250px) {
+		flex-direction: row;
+	}
+}
+
+.main {
+	&__paragraph,
+	&__catch_phrase {
+		padding: 0 2rem;
+	}
+
+	&__paragraph {
+		margin-bottom: 0.75rem;
+		margin-top: -0.5rem;
+		font-size: 1.1rem;
+		font-family: 'Istok Web', sans-serif;
+	}
+
+	&__catch_phrase {
+		font-weight: 800;
+		font-size: 1.3rem;
+	}
+
+	&__button {
+		margin-top: 2rem;
+	}
+
+	@media screen and (min-width: 768px) {
+		&__paragraph {
+			font-size: 1.25rem;
+		}
+
+		&__catch_phrase {
+			font-size: 1.5rem;
+		}
+
+		&__button {
+			margin-bottom: 1.5rem;
+			font-size: 1.1rem;
+		}
+	}
+}

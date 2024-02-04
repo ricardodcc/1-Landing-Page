@@ -1,0 +1,28 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+img,
+svg {
+	max-width: 100%;
+	height: auto;
+}
+
+h1,
+h2,
+h3,
+body,
+div,
+p,
+ul,
+li,
+span {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: var(--f-primary);
+}

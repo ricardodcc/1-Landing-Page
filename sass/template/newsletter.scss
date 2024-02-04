@@ -1,0 +1,77 @@
+.newsletter {
+	padding: 2.5rem;
+	background-color: var(--c-primary);
+	color: var(--c-secundary);
+	font-family: 'Istok Web', sans-serif;
+
+	&__name {
+		font-size: 2rem;
+		font-weight: 800;
+		font-family: var(--f-primary);
+		text-align: center;
+		margin-bottom: 1rem;
+		text-transform: capitalize;
+	}
+
+	&__catch {
+		font-size: 1.25rem;
+		text-align: center;
+		padding: 0 1rem 2rem 1rem;
+	}
+	&__discount {
+		font-size: 1.75rem;
+		text-align: center;
+	}
+
+	&__launch-time {
+		display: flex;
+		justify-content: center;
+		gap: 0.75rem;
+		font-size: 1.5rem;
+		margin-bottom: 1.5rem;
+
+		p {
+			text-align: center;
+			margin-bottom: -0.5rem;
+			font-weight: 800;
+		}
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		font-size: 1.25rem;
+
+		&__promotions {
+		}
+
+		input {
+			margin-bottom: 0.5rem;
+			min-height: 2rem;
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		&__discount {
+			font-size: 1.75rem;
+			text-align: center;
+		}
+	}
+}
+
+.form {
+	&__button {
+		margin: 0 auto;
+		width: min-content;
+	}
+
+	@media screen and (min-width: 768px) {
+		&__button {
+			font-size: 1rem;
+		}
+	}
+}
+
+.form__promotions {
+	margin-bottom: 1.5rem;
+}

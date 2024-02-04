@@ -1,0 +1,652 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Istok+Web&display=swap");
+:root {
+  --c-white: #fff;
+  --c-black: #000;
+  --c-primary: rgb(11, 168, 137);
+  --c-secundary: #FFF;
+  --f-primary: "Inter", sans-serif;
+  --f-secundary: font-family: "Istok Web", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+body,
+div,
+p,
+ul,
+li,
+span {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--f-primary);
+}
+
+.clients__list, .main_markets ul, .header__navegation .menu, .info__social ul, .info__skills ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+@media screen and (min-width: 375px) {
+  .container {
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+}
+.container-full {
+  max-width: 100%;
+}
+
+.menu {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  font-size: 1.1rem;
+  margin: 0 1.25rem !important;
+}
+.menu__item a {
+  text-transform: capitalize;
+  text-decoration: none;
+  color: var(--c-secundary);
+  position: relative;
+}
+.menu__item a::before {
+  background-color: var(--c-secundary);
+  content: "";
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  position: absolute;
+  transition: width 0.4s ease;
+}
+.menu__item a:hover:before {
+  width: 100%;
+}
+@media screen and (min-width: 1350px) {
+  .menu {
+    gap: 3rem;
+  }
+}
+
+.btn {
+  background-color: var(--c-secundary);
+  border: 2px solid var(--c-black);
+  border-radius: 0.63rem;
+  color: var(--c-black);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  text-transform: capitalize;
+  transition: all 0.4s ease;
+  text-align: center;
+  white-space: nowrap;
+}
+.btn:hover {
+  background-color: #d9d9d9;
+  color: #676767;
+  cursor: pointer;
+}
+.btn-shadow {
+  margin-bottom: 3px;
+  box-shadow: 3px 3px 0px 0px var(--c-black);
+  transition: transform 0.4s ease, shadow 0.4s ease;
+}
+.btn-shadow:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px 0px 0px var(--c-black);
+}
+
+.market {
+  background-color: var(--c-secundary);
+  border-radius: 0.5rem;
+  box-shadow: 0px 6px 20px -8px rgb(18, 90, 76);
+  color: var(--c-black);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.4s ease;
+  padding: 1rem;
+}
+.market__button {
+  width: fit-content;
+  margin-top: 1rem;
+}
+.market__main_info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.market__main_info img {
+  background-color: var(--c-secundary);
+  max-width: 25px;
+}
+.market__main_info h3 {
+  text-transform: capitalize;
+  font-size: 1.4rem;
+}
+.market__description {
+  font-size: 1rem;
+  font-family: "Istok Web", sans-serif;
+}
+.market__description span {
+  font-weight: 600;
+}
+.market::before {
+  content: "";
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 0.5rem;
+  background-color: var(--c-primary);
+  position: absolute;
+}
+.market:hover {
+  box-shadow: 0px 6px 20px -5px rgb(18, 90, 76);
+}
+.market__image {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .market {
+    padding: unset;
+  }
+  .market__main_info, .market__description {
+    padding: 0 1rem;
+  }
+  .market__image {
+    display: flex;
+  }
+  .market__button {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (min-width: 1250px) {
+  .market {
+    box-shadow: unset;
+    border-radius: unset;
+  }
+  .market__image {
+    display: none;
+  }
+  .market::before {
+    width: 0;
+  }
+  .market__main_info, .market__description {
+    padding: 0 1.5rem;
+  }
+  .market__description {
+    margin-bottom: unset;
+    font-size: 1.25rem;
+  }
+  .market__main_info h3 {
+    font-size: 2rem;
+  }
+  .market__button {
+    margin-top: 2rem;
+  }
+}
+
+.profileCard {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  flex-direction: column;
+  color: var(--c-secundary);
+}
+.profileCard__info {
+  text-align: center;
+  background: linear-gradient(to bottom, rgb(40, 132, 101), rgb(19, 67, 51));
+  width: 95%;
+  align-self: center;
+  translate: 0px -0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-radius: 0.5rem;
+}
+.profileCard__photo {
+  border-radius: 0.5rem;
+}
+
+.info__name, .info__position, .info__skills {
+  text-transform: capitalize;
+  margin: 0 2rem;
+}
+.info__name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+.info__position {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.info__skills {
+  font-size: 0.8rem;
+}
+.info__skills ul {
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+}
+.info__skills ul li:before {
+  content: "-> ";
+}
+.info__social ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.site-header {
+  align-items: center;
+  background-color: var(--c-primary);
+  color: var(--c-secundary);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+@media screen and (min-width: 1200px) {
+  .site-header {
+    padding: 0 150px;
+  }
+}
+
+.header__logo {
+  max-width: 90px;
+  flex-shrink: 0;
+}
+@media screen and (min-width: 1200px) {
+  .header__logo {
+    max-width: 80px;
+  }
+}
+.header__navegation .menu {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .header__navegation .menu {
+    display: flex;
+  }
+}
+.header__extra {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.header__button {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .header__button {
+    display: inline-block;
+  }
+}
+.header__menu_trigger {
+  background-color: var(--c-primary);
+  border-color: transparent;
+}
+.header__menu_trigger:hover {
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .header__menu_trigger {
+    display: none;
+  }
+}
+
+.extra__language {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.extra__language .language__flag {
+  max-width: 1.25rem;
+  height: auto;
+}
+.extra__language .language__name {
+  text-transform: uppercase;
+}
+.extra__language .language__menu_trigger {
+  cursor: pointer;
+}
+
+.main_markets__title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 800;
+  text-decoration: underline;
+}
+.main_markets ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3.75rem;
+  margin: 3.5rem 0;
+}
+.main_markets li {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
+.main_markets li .image {
+  max-width: 100px;
+  display: none;
+}
+@media screen and (min-width: 1250px) {
+  .main_markets li {
+    flex-direction: row;
+    max-width: 1300px;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0px 6px 20px -8px rgb(18, 90, 76);
+    transition: box-shadow 0.4s ease;
+  }
+  .main_markets li:hover {
+    box-shadow: 0px 6px 20px -5px rgb(18, 90, 76);
+  }
+  .main_markets li .image {
+    display: flex;
+    max-width: 600px;
+  }
+  .main_markets li .image-left {
+    order: -1;
+  }
+}
+@media screen and (min-width: 1250px) {
+  .main_markets__title {
+    font-size: 2.25rem;
+  }
+}
+
+.hero {
+  background-color: var(--c-primary);
+  border-radius: 0.5rem;
+  color: var(--c-secundary);
+  margin: 3.5rem auto;
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+  text-align: center;
+}
+.hero__image {
+  display: none;
+  min-width: 600px;
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    display: flex;
+    padding: unset;
+    flex-direction: column;
+    overflow: hidden;
+    width: fit-content;
+  }
+  .hero__image {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1250px) {
+  .hero {
+    flex-direction: row;
+  }
+}
+
+.main__paragraph, .main__catch_phrase {
+  padding: 0 2rem;
+}
+.main__paragraph {
+  margin-bottom: 0.75rem;
+  margin-top: -0.5rem;
+  font-size: 1.1rem;
+  font-family: "Istok Web", sans-serif;
+}
+.main__catch_phrase {
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+.main__button {
+  margin-top: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .main__paragraph {
+    font-size: 1.25rem;
+  }
+  .main__catch_phrase {
+    font-size: 1.5rem;
+  }
+  .main__button {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+.team {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.team__title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 800;
+  text-decoration: underline;
+}
+.team__list {
+  display: flex;
+  gap: -1.5rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+}
+.team__button {
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .team__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}
+@media screen and (min-width: 1250px) {
+  .team__list {
+    gap: 1.5rem;
+  }
+}
+
+.clients {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 1.75rem auto;
+  gap: 2rem;
+}
+.clients__title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+.clients__paragrahp {
+  text-align: center;
+  font-family: "Istok Web", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  max-width: fit-content;
+}
+.clients__paragrahp span {
+  font-weight: 600;
+}
+.clients__list {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 1.5rem 3.25rem;
+  box-shadow: 0px 6px 20px -8px rgb(18, 90, 76);
+}
+.clients__list > li:nth-child(n+3) {
+  display: none;
+}
+.clients__engagement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.clients__engagement .engagement {
+  text-align: center;
+}
+.clients__engagement .engagement__title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.clients__engagement .engagement__description {
+  width: max-content;
+}
+.clients__engagement .engagement__description span {
+  font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .clients__engagement .engagement {
+    text-align: start;
+  }
+  .clients__engagement .engagement__title {
+    font-size: 1.5rem;
+  }
+  .clients__engagement .engagement__description {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .clients {
+    margin-bottom: 4rem;
+  }
+  .clients__title {
+    font-size: 2rem;
+  }
+  .clients__paragrahp {
+    font-size: 1.25rem;
+  }
+  .clients__list {
+    gap: 8rem;
+  }
+  .clients__list > li:nth-child(n) {
+    display: unset;
+  }
+  .clients__list > li:nth-child(n+4) {
+    display: none;
+  }
+  .clients__engagement {
+    flex-direction: row;
+    gap: 8rem;
+  }
+}
+@media screen and (min-width: 1250px) {
+  .clients__list {
+    gap: 10rem;
+  }
+  .clients__list > li:nth-child(n) {
+    display: unset;
+  }
+}
+
+.newsletter {
+  padding: 2.5rem;
+  background-color: var(--c-primary);
+  color: var(--c-secundary);
+  font-family: "Istok Web", sans-serif;
+}
+.newsletter__name {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: var(--f-primary);
+  text-align: center;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+.newsletter__catch {
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 0 1rem 2rem 1rem;
+}
+.newsletter__discount {
+  font-size: 1.75rem;
+  text-align: center;
+}
+.newsletter__launch-time {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.newsletter__launch-time p {
+  text-align: center;
+  margin-bottom: -0.5rem;
+  font-weight: 800;
+}
+.newsletter__form {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.25rem;
+}
+.newsletter__form input {
+  margin-bottom: 0.5rem;
+  min-height: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .newsletter__discount {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+}
+
+.form__button {
+  margin: 0 auto;
+  width: min-content;
+}
+@media screen and (min-width: 768px) {
+  .form__button {
+    font-size: 1rem;
+  }
+}
+
+.form__promotions {
+  margin-bottom: 1.5rem;
+}
+
+/*# sourceMappingURL=style.css.map */

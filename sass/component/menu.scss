@@ -1,0 +1,37 @@
+.menu {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	gap: 1.5rem;
+	font-size: 1.1rem;
+	margin: 0 1.25rem !important;
+
+	&__item {
+		a {
+			text-transform: capitalize;
+			text-decoration: none;
+			color: var(--c-secundary);
+			position: relative;
+
+			&::before {
+				background-color: var(--c-secundary);
+				content: '';
+				left: 0;
+				bottom: -2px;
+				width: 0;
+				height: 2px;
+				position: absolute;
+				transition: width 0.4s ease;
+			}
+
+			&:hover:before {
+				width: 100%;
+			}
+		}
+	}
+
+	@media screen and (min-width: 1350px) {
+		gap: 3rem;
+	}
+}
