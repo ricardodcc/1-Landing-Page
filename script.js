@@ -1,6 +1,26 @@
+const companies = ['A ACNE Co', 'ACME Co', 'ACME fog', 'ACME TV', 'ACME'];
+let currentImg = 0;
+let random = 0;
+const UpdateCompanies = () => {
+	for (let i = 0; i < 5; i++) {
+		// with this approach, we don't have to write an image for the same image
+		do {
+			const random = Math.floor(Math.random() * companies.length);
+			console.log(random);
+			currentImg = document.querySelector(`.client--${i + 1}`).children[0].src.split('/')[5];
+			console.log(currentImg + ' / ' + companies[random]);
+			if (currentImg !== companies[random]) {
+				document.querySelector(`.client--${i + 1}`).children[0].src = `images/Companies Slider/${companies[random]}.png`;
+			}
+		} while (currentImg === companies[random]);
+	}
+};
+
+// function to set the remaining time in the counter
 const CheckNumber = number => {
 	return number <= 9 ? `0${number}` : number;
 };
+// function to do the counterdown from the newsletter section
 const countDown = () => {
 	const displayDays = document.querySelector('.display-days');
 	const displayHours = document.querySelector('.display-hours');
@@ -26,3 +46,4 @@ const countDown = () => {
 countDown();
 //tem dois args, 1º- func e 2º- temp em milisegundos
 setInterval(countDown, 1000);
+setInterval(UpdateCompanies, 2000);
